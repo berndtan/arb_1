@@ -1,0 +1,17 @@
+body { 
+  padding-top: 60px;
+  font-size: 12px;
+} 
+
+footer {
+  margin-top: 17px;
+  padding-top: 17px;
+  border-top: 1px solid #eee;
+  background-color: #E6E6E6;
+  text-align: center;
+}
+
+.carousel-caption h1 {
+  color: orange;
+  margin: 0 0 20px;
+}

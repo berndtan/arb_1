@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Business</title>
+  	<title>The Life Science Group	:: <%= controller.controller_name.capitalize %> -
+							  		   <%= controller.action_name.capitalize %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<!-- NAV BAR -->
+	<div class="navbar navbar-fixed-top">
+	  <div class="navbar-inner">
+	    <div class="container">
+	      <a class="brand">The Life Science Group</a>
+	      <ul class="nav">
+	        <li><%= link_to('Home', '/home') %></li>
+	        <li><%= link_to('About Us', '/about') %></li>
+	        <li><%= link_to('Contact Us', '/contact') %></li>
+	      </ul>
+	    </div>
+	  </div>
+	</div>
 
-<%= yield %>
+	<!-- MAIN CONTENT HERE -->
+  	<div class="container">
+		<% flash.each do |name, msg| %>
+			<div class="alert alert-<%= :notice ? "success" : "error" %>">
+				<a class="close" data-dismiss="alert">x</a>
+				<%= msg %>
+			</div>
+		<% end %>
+
+		<div class="row">
+			<!-- main content in the two-thirds section -->
+  			<div id="main_content" class="span12">
+  			  <%= yield %>
+  			</div>
+			<!-- quick links on the side in the one-third section -->
+			<!-- quick links already exists in the project's partial directory -->
+			<!-- <div class="span4">
+			</div> -->
+  		</div>
+  	</div>
+
+	<!-- FOOTER -->
+	<footer id="footer" class="footer">
+	  <div class="container">
+	    <%= render :partial => "partials/footer" %>
+	  </div>
+	</footer>
 
 </body>
 </html>
